@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    height: 70px;
+    background-color: rgb(55, 88, 88);
+    color: white;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.prompt-section{
+    align-items: center;
+    position: relative;
+}
+
+.prompt-section input[type="text"] {
+    width: 90%;
+    margin: 30px 5%;
+    height: 40px;
+    font-size: 1rem;
+    padding: 10px 120px 10px 20px;
+    outline: none;
+    border: none;
+    background-color: rgba(47, 79, 79, 0.2);
+    border-radius: 5px;
+    
+}
+.prompt-section button[type="button"]{
+    position: absolute;
+    top: 30px;
+    font-size: 1rem;
+    right: 5%;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    width: 100px;
+    background-color: rgb(55, 88, 88);;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+.gird-container{
+    display: none;
+    margin: 5px 15%;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    column-gap: 50px;
+    row-gap: 50px;
+    margin-bottom: 50px;
+}
+.grid-item{
+    width: 100%;
+    height: auto;
+}
+#svg-container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.res-images{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* ----------------------footer---------------------- */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: rgb(55, 88, 88);;
+    color: white;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 768px) {
+    .header{
+        justify-content: flex-start;
+        padding-left: 35px;
+        height: 100px;
+        font-size: 25px;
+    }
+    .gird-container {
+        margin: 30px 12%;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        row-gap: 80px;
+        margin-bottom: 50px;
+    }
+    .footer {
+        position: static;
+        height: 90px;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .prompt-section input[type="text"] {
+        width: 90%;
+        margin-bottom: 10px;
+        height: 50px;
+        font-size: 1.1rem;
+        padding: 10px 20px 10px 20px;
+    }
+    .prompt-section button[type="button"] {
+        position: static;
+        display: flex;
+        margin: auto;
+        height: 50px;
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+    }
+}
