@@ -17,6 +17,13 @@
     align-items: center;
     position: relative;
 }
+.warning{
+    font-size: 0.9rem;
+    text-align: center;
+    margin: auto;
+    color: red;
+    background-color: transparent;
+}
 
 .prompt-section input[type="text"] {
     width: 90%;

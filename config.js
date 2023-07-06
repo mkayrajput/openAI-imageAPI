@@ -6,12 +6,16 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 const generateImages = async (userPrompt) => {
-  const response = await openai.createImage({
-    prompt: userPrompt,
-    n: 3,
-    size: "1024x1024",
-  });
-
-  return JSON.stringify(response)
+  try {
+    const response = await openai.createImage({
+      prompt: userPrompt,
+      n: 3,
+      size: "1024x1024",
+    });
+    return JSON.stringify(response)
+  } catch (err) {
+    const error = new Error('Something went wrong');
+    return error
+  }
 }
 module.exports = generateImages

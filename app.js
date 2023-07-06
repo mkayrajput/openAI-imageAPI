@@ -2,7 +2,8 @@ require('dotenv').config()
 const express = require("express")
 const app = express();
 const path = require('path');
-const generateImage = require("./config.js")
+const generateImage = require("./config.js");
+const { error } = require('console');
 
 // set the view engine to ejs
 app.use(express.static('public'))
@@ -17,7 +18,6 @@ app.post("/", async(req, res) => {
     const userPrompt = (req.body.userPrompt)
     const response = await generateImage(userPrompt)
     res.send(response)
-
 })
 
 
