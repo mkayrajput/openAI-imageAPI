@@ -4,20 +4,22 @@ const app = express();
 const path = require("path");
 const { Configuration, OpenAIApi } = require("openai");
 
-// set the view engine to ejs
 app.use(express.static("public"));
 app.use(express.json());
 
+// OpenAI configuration
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
 
+// root route to serve html.html
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/index.html"));
 });
 
+// root route to user handle post request
 app.post("/", async (req, res) => {
   const userPrompt = req.body.userPrompt;
   try {
